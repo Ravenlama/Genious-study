@@ -6,10 +6,16 @@ background-image: url(../images/footer-background.png);
 background-repeat: no-repeat;
 background-size: cover;
 background-position: center;
+text-align: center;
 
 &__container {
     display: flex;
+    flex-direction: column;
     gap: 20px;
+
+    @media screen and (min-width: $bp-tablet) {
+        flex-direction: row;
+    }
 }
 
 &::before{
@@ -17,6 +23,7 @@ background-position: center;
     width: 180px;
     height: 120px;
     bottom: 0;
+    left: 0;
     background-repeat: no-repeat;
     background-image: url(../images/decor-bread-small.png);
     content: '';
@@ -33,10 +40,17 @@ background-position: center;
     content: '';
 }
 
-&__nav {
+&__nav,
+&__address {
     display: flex;
-    flex-basis: 50%;
+    flex-direction: column;
     gap: 20px;
+
+    @media screen and (min-width: $bp-tablet) {
+        flex-direction: row;
+        flex-basis: 50%;
+        text-align: left;
+    }
 }
 
 &__logo {
@@ -50,13 +64,8 @@ background-position: center;
 &__link{
     margin-bottom: 16px;
 }
-}
-.address {
-    display: flex;
-    flex-basis: 50%;
-    gap: 20px;
 
-    &__link {
+    &__address-link {
     text-decoration: none;
     color: var(--color-primary-light);
     font-weight: 300px;
@@ -69,19 +78,25 @@ background-position: center;
     }
     }
 
-    &__copyright {
+    &__address-copyright {
     font-size: 14px;
     color: var(--color-secondary-dark);
     }
 
-    &__icon-container{
+    &__address-icon-container{
         display: flex;
         gap: 22px;
+        justify-content: center;
+
+        @media screen and (min-width: $bp-tablet){
+            justify-content: left;
+        }
     }
 
-    &__icon {
+    &__address-icon {
         transition: fill 0.3s;
         fill: var(--color-primary-light);
+        z-index: 1;
 
         &:hover{
             fill: var(--color-brand-normal);
@@ -89,11 +104,8 @@ background-position: center;
     }
 
 
-    &__list {
-        flex-grow: 1;
-    }
-
-    &__info {
+    &__address-list,
+    &__address-info {
         flex-grow: 1;
     }
 }

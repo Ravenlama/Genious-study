@@ -12,10 +12,6 @@
     background-color: transparent;
     flex-shrink: 0;
 
-    &__button--next {
-        transform: rotate(180deg);
-    }
-
     &:hover {
         background-color: var(--color-primary-dark);
         fill: var(--color-primary-light);
@@ -29,5 +25,9 @@
         fill: var(--color-primary-dark);
         width: 16px;
         height: 16px;
+    }
+
+    &.next{
+        transform: rotate(180deg);
     }
 }
