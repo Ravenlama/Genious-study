@@ -7,6 +7,7 @@ background-repeat: no-repeat;
 background-size: cover;
 background-position: center;
 text-align: center;
+overflow: hidden;
 
 &__container {
     display: flex;
@@ -20,24 +21,41 @@ text-align: center;
 
 &::before{
     position: absolute;
-    width: 180px;
-    height: 120px;
-    bottom: 0;
+    width: 92px;
+    height: 196px;
+    top: 0;
     left: 0;
     background-repeat: no-repeat;
-    background-image: url(../images/decor-bread-small.png);
+    background-image: url(../images/decor-bread-small-mobile.png);
     content: '';
+
+    @media screen and (min-width: $bp-tablet) {
+        width: 180px;
+        height: 120px;
+        top:auto;
+        bottom: 0;
+        left: 0;
+        background-image: url(../images/decor-bread-small.png);
+    }
 }
 
 &::after{
     position: absolute;
-    width: 380px;
-    height: 190px;
+    width: 112px;
+    height: 120px;
     background-repeat: no-repeat;
-    bottom: 0;
-    right: 0;
-    background-image: url(../images/decor-bread-large.png);
+    bottom: -32px;
+    right: -10px;
+    background-image: url(../images/decor-bread-large-mobile.png);
     content: '';
+
+    @media screen and (min-width: $bp-tablet){
+        width: 380px;
+        height: 190px;
+        right: 0;
+        bottom: 0;
+        background-image: url(../images/decor-bread-large.png);
+    }
 }
 
 &__nav,
